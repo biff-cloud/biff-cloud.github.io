@@ -1,14 +1,17 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>biff-cloud: x402 pay-per-call APIs for AI agents</title>
 <meta name="description" content="x402 pay-per-call APIs for AI agents, paid in USDC on Solana: Solana Agent Toolbox and x402 Health. No accounts, no API keys.">
-<style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;color:#222}code,pre{background:#f4f4f4;border-radius:4px}pre{padding:10px;overflow:auto}.c{border:1px solid #ddd;border-radius:8px;padding:16px;margin:16px 0}small{color:#666}</style></head><body>
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;color:#222}code,pre{background:#f4f4f4;border-radius:4px}pre{padding:10px;overflow:auto}.c{border:1px solid #ddd;border-radius:8px;padding:16px;margin:16px 0}small{color:#666}.banner{background:#fff3cd;border:1px solid #e6d08a;border-radius:8px;padding:12px 14px;margin:16px 0}</style></head><body>
 <h1>x402 APIs for AI agents</h1>
 <p>Pay per call in USDC on Solana via <a href="https://www.x402.org">x402</a>. No signup and no API keys. An unpaid request returns <code>HTTP 402</code> with the price, any x402 client pays and retries, and the PayAI facilitator covers SOL fees.</p>
+<div class="banner"><strong>Host status:</strong> Render free instances for both APIs are currently <strong>suspended by owner</strong> (<code>HTTP 503</code>, <code>x-render-routing: suspend-by-user</code>). Endpoints below will not answer until they are Resumed (or moved to a new host). Source and MCP servers stay on GitHub.</div>
 <div class="c"><h2>Solana Agent Toolbox</h2><p>$0.005 per call. Token risk score, why a transaction failed, preflight before signing (drainer warnings), wallet snapshot and activity, new pump.fun launches.</p>
-<p><a href="https://solana-agent-toolbox.onrender.com/openapi.json">OpenAPI</a> · <a href="https://github.com/biff-cloud/solana-agent-toolbox">GitHub + MCP server</a></p>
-<pre>curl -i https://solana-agent-toolbox.onrender.com/v1/token/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN</pre></div>
+<p><a href="https://github.com/biff-cloud/solana-agent-toolbox">GitHub + MCP server</a> · OpenAPI (live after Resume): <code>https://solana-agent-toolbox.onrender.com/openapi.json</code></p>
+<pre># After Resume — unpaid probe should return HTTP 402 with payTo J41T…
+curl -i https://solana-agent-toolbox.onrender.com/v1/token/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN</pre></div>
 <div class="c"><h2>x402 Health</h2><p>$0.002 to $0.01 per call. Check whether an x402 endpoint is up and serves valid 402 metadata before you pay it, view uptime history, and get reliable x402 services ranked by category (built from the PayAI and Coinbase discovery catalogs).</p>
-<p><a href="https://x402-health.onrender.com/openapi.json">OpenAPI</a> · <a href="https://x402-health.onrender.com/llms.txt">llms.txt</a> · <a href="https://github.com/biff-cloud/x402-health">GitHub + MCP server</a></p>
-<pre>curl -i "https://x402-health.onrender.com/v1/reliable?category=ai"</pre></div>
-<p><small>Free hosting: the first call after idle can take about a minute. If a host returns <code>Service Suspended</code>, the free Render plan may need a Resume in the dashboard (shared 750 instance-hours/month). Output is informational only, not financial advice. Open source, MIT.</small></p>
+<p><a href="https://github.com/biff-cloud/x402-health">GitHub + MCP server</a> · OpenAPI (live after Resume): <code>https://x402-health.onrender.com/openapi.json</code></p>
+<pre># After Resume
+curl -i "https://x402-health.onrender.com/v1/reliable?category=ai"</pre></div>
+<p><small>Free hosting: the first call after idle can take about a minute. Shared Render free plan is 750 instance-hours/month; owner Suspend shows as <code>Service Suspended</code>. Output is informational only, not financial advice. Open source, MIT.</small></p>
 </body></html>

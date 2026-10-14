@@ -1,4 +1,4 @@
 # biff-cloud x402 APIs
-> Pay-per-call APIs for AI agents (x402, USDC on Solana).
-- [Solana Agent Toolbox](https://solana-agent-toolbox.onrender.com/openapi.json): Solana token safety, tx explainer, preflight, wallet, launches. $0.005/call
-- [x402 Health](https://x402-health.onrender.com/llms.txt): x402 endpoint checks, uptime, reliable-service directory. $0.002-0.01/call
+> Pay-per-call APIs for AI agents (x402, USDC on Solana). Host status: Render free instances may be suspended (HTTP 503); check GitHub until Resumed.
+- [Solana Agent Toolbox](https://github.com/biff-cloud/solana-agent-toolbox): Solana token safety, tx explainer, preflight, wallet, launches. $0.005/call. Live OpenAPI after Resume: https://solana-agent-toolbox.onrender.com/openapi.json
+- [x402 Health](https://github.com/biff-cloud/x402-health): x402 endpoint checks, uptime, reliable-service directory. $0.002-0.01/call. Live after Resume: https://x402-health.onrender.com/llms.txt
